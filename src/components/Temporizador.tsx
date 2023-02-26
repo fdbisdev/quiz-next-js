@@ -9,8 +9,8 @@ interface TemporizadorProps {
 }
 
 const green = '#BCE596'
-// const yellow = '#F7B801'
-// const red = '#ED827A'
+const yellow = '#F7B801'
+const red = '#ED827A'
 
 export default function Temporizador(props: TemporizadorProps) {
     return (
@@ -20,7 +20,9 @@ export default function Temporizador(props: TemporizadorProps) {
                 size={120}
                 isPlaying
                 onComplete={props.tempoEsgotado}
-                colors={green}>
+                colors={[green, yellow, red]}
+                colorsTime={[0.33, 0.33, 0.33]}
+            >
                 {({ remainingTime }) => remainingTime}
             </CountdownCircleTimer>
         </div>
